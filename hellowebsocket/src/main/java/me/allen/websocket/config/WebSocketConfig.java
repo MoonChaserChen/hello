@@ -16,17 +16,16 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
+        // enable a simple memory-based message broker to carry the greeting messages back to the client on destinations prefixed with "/topic"
         config.enableSimpleBroker("/topic");
+        // "/app/hello" is the endpoint that the HelloController.greeting() method is mapped to handle.
+        // stompClient.send("/app/hello", {}, "message") will be send to HelloController.greeting(). code in app.js.
         config.setApplicationDestinationPrefixes("/app");
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/gs-guide-websocket").withSockJS();
-    }
-    @Override
-    public void configureClientInboundChannel(ChannelRegistration registration) {
-        registration.setInterceptors(new MyChannelInterceptor());
     }
 
 }

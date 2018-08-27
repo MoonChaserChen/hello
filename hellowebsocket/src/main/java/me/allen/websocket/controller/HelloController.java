@@ -32,6 +32,7 @@ public class HelloController {
     public String send(){
         Response response = new Response("Hello Stranger!");
         String jsonString = JSONObject.toJSONString(response);
+        //Send message to anyone who has subscribe this "topic": stompClient.subscribe('/topic/greetings', function (data) {});  ---> code in app.js
         simpMessagingTemplate.convertAndSend("/topic/greetings", jsonString);
         return "OK";
     }
