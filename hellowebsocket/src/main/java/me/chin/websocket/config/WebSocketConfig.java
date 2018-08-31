@@ -1,4 +1,4 @@
-package me.allen.websocket.config;
+package me.chin.websocket.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.ChannelRegistration;

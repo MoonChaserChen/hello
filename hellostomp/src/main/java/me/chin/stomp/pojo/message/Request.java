@@ -1,11 +1,8 @@
-package me.allen.websocket.pojo.message;
-
-import javax.websocket.server.ServerEndpoint;
+package me.chin.stomp.pojo.message;
 
 /**
  * Created by Allen on 2018/8/24.
  */
-@ServerEndpoint("")
 public class Request {
     private String name;
 

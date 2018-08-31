@@ -1,4 +1,4 @@
-package me.allen.websocket.pojo.message;
+package me.chin.stomp.pojo.message;
 
 /**
  * Created by Allen on 2018/8/24.
